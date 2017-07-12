@@ -1,0 +1,12 @@
+<h1>Contact Information</h1>
+<p>Name: <%= @contact.last_name %>, <%= @contact.first_name %></p>
+<p>E-mail: <%= @contact.email %></p>
+<p>Cell: <%= @contact.phone_number %></p>
+<br>
+<a href="/contacts/<%= @contact.id %>/edit">Edit this contact</a>
+<br>
+<%= form_tag "/contacts/#{@contact.id}", method: "delete" do %>
+  <input type="submit" value="Delete contact">
+<% end %>
+<br>
+<a href="/contacts">Go back</a>
