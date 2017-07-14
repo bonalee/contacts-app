@@ -1,19 +1,25 @@
 <h1>New Contact</h1>
 <%= form_tag "/contacts", method: "post" do %>
-  <div>
+  <div class="form-group">
     First Name: <input type="text" placeholder="First Name" name="form_first_name">
   </div>
-  <div>
+  <div class="form-group">
+    Middle Name: <input type="text" placeholder="Middle Name" name="form_middle_name">
+  </div>
+  <div class="form-group">
     Last Name: <input type="text" placeholder="Last Name" name="form_last_name">
   </div>
-  <div>
+  <div class="form-group">
     E-mail: <input type="text" placeholder="E-mail" name="form_email">
   </div>
-  <div>
+  <div class="form-group">
     Phone: <input type="text" placeholder="Phone Number" name="form_phone_number">
   </div>
+  <div class="form-group">
+    Bio: <input type="text" placeholder="Bio" name="form_bio">
+  </div>
   <br>
-  <input type="submit" value="Create contact">
+  <input type="submit" class="btn btn-default" value="Create contact">
   <br>
   <a href="/contacts">Go Back</a>
 <% end %>
