@@ -1,6 +1,22 @@
 class ContactsController < ApplicationController
   def contact_index
-    @contacts = Contact.all
+    #@contacts = Contact.all
+
+    #Ruby
+    #all_contacts = Contact.all
+    #@contacts = []
+    #all_contacts.each do |contact|
+      #if contact.user_id == current_user.id
+        #@contacts << contact
+      #end
+    #end
+    
+    #Active Record
+    #@contacts = Contact.where(user_id: current_user.id)
+
+    #Rails Associations
+    @contacts = current_user.contacts
+
     render "all_contacts.html.erb"
   end
 
