@@ -1,15 +1,21 @@
 <h1>Contact Information</h1>
+<p><%= @contact.first_name %>'s Groups:
+  <% @contact.groups.each do |group| %>
+    <span><%= group.name %></span>
+  <% end %>
+</p>
 <p>Name: <%= @contact.full_name %></p>
 <p>E-mail: <%= @contact.email %></p>
 <p>Cell: <%= @contact.phone_number %></p>
 <p><%= @contact.bio %></p>
 <br>
-<p>Added on <%= contact.friendly_time_created %></p>
+<p>Added on <%= @contact.friendly_time_created %></p>
 <br>
 <a href="/contacts/<%= @contact.id %>/edit">Edit this contact</a>
+<br>
+<a href="/contacts">Go back</a>
+<br>
 <br>
 <%= form_tag "/contacts/#{@contact.id}", method: "delete" do %>
   <input type="submit" value="Delete contact">
 <% end %>
-<br>
-<a href="/contacts">Go back</a>
